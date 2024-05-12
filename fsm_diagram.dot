@@ -1,0 +1,28 @@
+digraph fsm {
+    rankdir = LR
+
+    q0 [label="Start" shape="circle"]
+    q1 [label="Sleep" shape="circle"]
+    q2 [label="Death" shape="doublecircle"]
+    q3 [label="Eat" shape="circle"]
+    q4 [label="Study" shape="circle"]
+    q5 [label="Relax" shape="circle"]
+
+    q0 -> q1
+
+    q1 -> q1 [label = "Hours 0 - 7"]
+    q1 -> q2 [label = "Random event based on random luck"]
+    q1 -> q3 [label = "Hours 5 - 7 \n Hours 5-6 is Random event based on random luck"]
+    q1 -> q4 [label = "Hours 8 - 11 \n Random event based on random luck"]
+
+    q3 -> q2 [label = "Random event based on random luck"]
+    q3 -> q4 [label = "Hours 8 - 9 breakfast"]
+    q3 -> q5 [label = "Hours 15 - 16 lunch"]
+    q3 -> q1 [label = "Hours 19 - 21 dinner"]
+
+    q4 -> q2 [label = "Random event based on random luck"]
+    q4 -> q3 [label = "Hour 14"]
+
+    q5 -> q2 [label = "Random event based on random luck"]
+    q5 -> q3 [label = "Hour 19"]
+}
